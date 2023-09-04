@@ -2,5 +2,34 @@
 
 {% block content %}
 {% load static %}
+<div class="container" style="width: 85%; background-color: #D0EEEE; padding: 20px">
+    <div class="row mb-3">
+        <div class="logo-container">
+            <img
+                    src="{% static 'logo.png' %}"
+                    alt="Portfolio"
+                    width="150"
+            >
+        </div>
+    </div>
+    {% if not user.is_authenticated %}
+        <div class="row justify-content-center">
+            <div class="col-md-5 mb-1 align-self-center text-center">
+                <h5>Atenção!</h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 mb-2 align-self-center text-center">
+                <h5>Você não está <strong>logado!</strong></h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 mb-2 align-self-center text-center">
+                <p>Para realizar o login: <a href="{% url 'login' %}">Clique aqui!</a></p>
+            </div>
+        </div>
+    {% else %}
+    {% endif %}
+</div>
 
 {% endblock %}

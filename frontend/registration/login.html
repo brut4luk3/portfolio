@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load static %}
-<div class="container mt-1 mb-1" style="background-color: #2FACAE; padding: 20px; border-radius: 10px">
+<div class="container mt-1 mb-1" style="background-color: #D0EEEE; padding: 20px; border-radius: 10px">
     <div class="row mb-3">
         <div class="logo-container">
             <img
@@ -43,11 +43,11 @@
                 <form action="{% url 'login' %}" method="POST">
                     {% csrf_token %}
                     <div class="mb-2">
-                        <label class="form-label fw-medium text-white">E-mail</label>
+                        <label class="form-label fw-medium">E-mail</label>
                         {{ form.username }}
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-medium text-white">Senha</label>
+                        <label class="form-label fw-medium">Senha</label>
                         {{ form.password }}
                     </div>
                     <div class="row justify-content-center">

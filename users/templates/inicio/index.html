@@ -29,7 +29,132 @@
             </div>
         </div>
     {% else %}
+        <div class="row justify-content-center">
+            <div class="col mb-2 align-self-center text-center">
+                <h2>Seja bem-vindo</h2>
+                <h2>{{ user.first_name }}!</h2>
+            </div>
+        </div>
+        <div class="container bg-dark-subtle rounded mb-2" style="width: 100%">
+            <div class="row align-items-start">
+                <div class="col text-center mt-4 mb-4 md-4">
+                    <img
+                            src="{% static 'lucas.jpeg' %}"
+                            alt="Lucas"
+                            class="rounded"
+                            width="95%"
+                    >
+                </div>
+                <div class="col text-left mt-4 mb-4 md-4">
+                    <h3>Este sou eu...</h3>
+                    <p class="fw-medium">Um pai cuidadoso, um marido amoroso e um profissional qualificado para superar qualquer desafio!</p>
+                    <p class="fw-medium">Minha especialidade é desenvolver websites 100% dinâmicos e funcionais, e para isso, utilizo o framework Django. Para aumentar ainda mais a usabilidade e alcance de minhas aplicações, crio endpoints utilizando FlaskAPI para interligar as mais variadas plataformas ao seu sistema.</p>
+                    <p class="fw-medium">Possuo conhecimento em fundamentos de UX, prezando sempre por designs minimalistas que garantem uma ferramenta intuitiva e acessível.</p>
+                    <p class="fw-medium">Ao me contratar, posso lhe garantir que você estará trabalhando com uma pessoa que lhe trará soluções, inovação e conhecimento.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col mb-2 align-self-center text-center">
+                <h3>Veja abaixo alguns dos meus principais projetos:</h3>
+            </div>
+        </div>
+        <div class="container bg-primary-subtle">
+            <div class="row mb-3">
+                <div class="col align-self-center text-center">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img
+                                        src="{% static 'feriados.png' %}"
+                                        alt="API Feriados"
+                                        class="img-fluid rounded"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>Ambiente Feriados</h5>
+                                    <p class="fw-semibold">Aqui você pode cadastrar, editar, deletar feriados e consumir estes dados via API.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                        src="{% static 'datas.png' %}"
+                                        alt="API Compara Datas"
+                                        class="img-fluid rounded mx-auto d-block"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>API Compara Datas</h5>
+                                    <p class="fw-semibold">Realize o cálculo de dias entre datas, assim como comparações de maior e menor.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                        src="{% static 'geolocation.png' %}"
+                                        alt="API Geolocation"
+                                        class="img-fluid rounded mx-auto d-block"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>API Geolocation</h5>
+                                    <p class="fw-semibold">Esta API recebe a latitude e longitude e devolve sua localização exata.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                        src="{% static 'dias.png' %}"
+                                        alt="API Informa Dia Útil"
+                                        class="img-fluid rounded mx-auto d-block"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>API Informa Dia Útil</h5>
+                                    <p class="fw-semibold">Com uma lista de datas pré-definida, esta API valida se hoje é feriado, final de semana ou dia útil.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                        src="{% static 'replace.png' %}"
+                                        alt="API Replace Text"
+                                        class="img-fluid rounded mx-auto d-block"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>API Replace Text</h5>
+                                    <p class="fw-semibold">Substitua as instâncias de uma palavra em um texto de forma rápida e assertiva.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                        src="{% static 'documento.png' %}"
+                                        alt="API CPF ou CNPJ"
+                                        class="img-fluid rounded mx-auto d-block"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>API CPF ou CNPJ</h5>
+                                    <p class="fw-semibold">Esta API valida se um documento é um CPF ou CNPJ através de critérios pré-definidos.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                        src="{% static 'telefone.png' %}"
+                                        alt="API Telefone LATAM"
+                                        class="img-fluid rounded mx-auto d-block"
+                                >
+                                <div class="carousel-caption d-none d-md-block text-white">
+                                    <h5>API Telefone LATAM</h5>
+                                    <p class="fw-semibold">Esta API recebe um telefone em vários formatos, informando sua validade e local na América Latina.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
 </div>
-
 {% endblock %}

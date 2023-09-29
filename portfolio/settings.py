@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l95#4$p$1t2l7$q2_@9)(46+wfu*%9j74r2)n^lw$oeffvr#$r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'users.apps.UsersConfig',
-    'base_page.apps.BasePageConfig',
     'register.apps.RegisterConfig',
     'api_compara_datas.apps.ApiComparaDatasConfig',
 ]
@@ -82,8 +81,13 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.portfolio',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portfolio',
+        'USER': 'root',
+        'PASSWORD': 'Omega_200',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
 }
 
@@ -133,8 +137,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/users/'
+LOGIN_REDIRECT_URL = '/users/login/'
 
-LOGOUT_REDIRECT_URL = '/registration/login/'
+LOGOUT_REDIRECT_URL = '/users/login/'
 
 AUTH_USER_MODEL = 'users.CustomUser'

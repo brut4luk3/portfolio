@@ -29,7 +29,8 @@
         </div>
         <div class="row justify-content-center">
             <div class="col mt-4 mb-2 align-self-center text-center">
-                <h2>API Geolocation
+                <h2>API Geolocation</h2>
+            </div>
         </div>
         <div class="container bg-dark-subtle rounded mt-5 mb-4" style="width: 50%">
             <div class="row justify-content-center">
@@ -77,9 +78,8 @@
                     <h4>Copie abaixo a cURL desta API:</h4>
                 </div>
                 <div class="row mb-2">
-                    <p class="fw-medium">Modo "Diferença":</p>
                     <code id="curlCode1">
-                        curl -X POST -H "Content-Type: application/json" -d '{"data1": "01/09/2023", "data2": "10/09/2023", "modo": "diferenca"}' http://brut4luk3.pythonanywhere.com/api/compara_datas
+                        curl -X POST -H "Content-Type: application/json" -d '{"latitude": -16.77972, "longitude": -47.92972}' https://api-geolocation.onrender.com/api/geolocation
                     </code>
                 </div>
                 <div class="row justify-content-center mb-4">

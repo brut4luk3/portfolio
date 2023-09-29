@@ -9,7 +9,15 @@ def index_api_geolocation(request):
 
     elif request.method == 'POST':
 
-        post_data = request.POST
+        post_data = request.POST.copy()
+        latitude_template = post_data.get('latitude')
+        longitude_template = post_data.get('longitude')
+
+        latitude = float(latitude_template)
+        longitude = float(longitude_template)
+
+        post_data['latitude'] = latitude
+        post_data['longitude'] = longitude
 
         response = requests.post('https://api-geolocation.onrender.com/api/geolocation', json=post_data)
 

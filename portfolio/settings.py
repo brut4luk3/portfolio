@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'register.apps.RegisterConfig',
     'api_compara_datas.apps.ApiComparaDatasConfig',
+    'api_geolocation.apps.ApiGeolocationConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +138,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/users/login/'
+LOGIN_REDIRECT_URL = '/users/'
 
 LOGOUT_REDIRECT_URL = '/users/login/'
 

@@ -16,6 +16,7 @@ def index_api_geolocation(request):
         latitude = float(latitude_template)
         longitude = float(longitude_template)
 
+
         post_data['latitude'] = latitude
         post_data['longitude'] = longitude
 

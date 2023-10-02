@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'register.apps.RegisterConfig',
     'api_compara_datas.apps.ApiComparaDatasConfig',
     'api_geolocation.apps.ApiGeolocationConfig',
+    'api_informa_dia_util.apps.ApiInformaDiaUtilConfig',
 ]
 
 MIDDLEWARE = [

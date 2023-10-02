@@ -26,4 +26,7 @@ urlpatterns = [
     path('api_compara_datas/', include('api_compara_datas.urls')),
     path('api_geolocation/', include('api_geolocation.urls')),
     path('api_informa_dia_util/', include('api_informa_dia_util.urls')),
+    path('api_replace_text/', include('api_replace_text.urls')),
+    path('api_cpf_cnpj/', include('api_cpf_cnpj.urls')),
+    path('api_telefone_latam/', include('api_telefone_latam.urls')),
 ]

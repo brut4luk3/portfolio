@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container" style="width: 85%; background-color: #D0EEEE; padding-bottom: 20px">
+    {% if not user.is_authenticated %}
+        <div class="row justify-content-center">
+            <div class="col-md-5 mb-1 align-self-center text-center">
+                <h5>Atenção!</h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 mb-2 align-self-center text-center">
+                <h5>Você não está <strong>logado!</strong></h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 mb-2 align-self-center text-center">
+                <p>Para realizar o login: <a href="{% url 'login' %}">Clique aqui!</a></p>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid sticky-top">
+            <div class="row custom-right-align align-items-center">
+                <div class="col mt-2">
+                    <a class="btn btn-secondary" href="{% url 'users:index' %}">Início</a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col mt-4 mb-2 align-self-center text-center">
+                <h2>API Compara Datas</h2>
+            </div>
+        </div>
+        <div class="container bg-dark-subtle rounded mt-5 mb-4" style="width: 50%">
+            <div class="row justify-content-center">
+                <form action="" method="POST" style="width: 50%">
+                    {% csrf_token %}
+                    <div class="mt-4 mb-2">
+                        <label for="inputData1" class="form-label fw-medium">Data 1</label>
+                        <input
+                                type="date"
+                                name="data1"
+                                class="form-control rounded-3"
+                                id="inputData1"
+                                required
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputData2" class="form-label fw-medium">Data 2</label>
+                        <input
+                                type="date"
+                                name="data2"
+                                class="form-control rounded-3"
+                                id="inputData2"
+                                required
+                        >
+                    </div>
+                    <div class="mb-4">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="modo" data-bs-toggle="dropdown" aria-expanded="false" name="modo">
+                                Selecione o modo
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="#" data-value="comparacao">Comparação</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-value="diferenca">Diferença</a>
+                                </li>
+                            </ul>
+                            <input type="hidden" name="modo" id="modo-hidden" value="comparacao">
+                            <script>
+                                document.querySelectorAll('.dropdown-item').forEach(item => {
+                                    item.addEventListener('click', (event) => {
+                                        event.preventDefault();
+                                        const selectedValue = event.target.getAttribute('data-value');
+                                        document.getElementById('modo-hidden').value = selectedValue;
+                                        document.getElementById('modo').innerText = event.target.innerText;
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="row md-6 mb-4 justify-content-center">
+                            <button type="submit" class="btn btn-secondary" style="width: 100%">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container bg-dark-subtle rounded mt-5 mb-4" style="width: 50%">
+            <div class="row justify-content-center text-center mt-2 mb-2">
+                    <h3>Resultado:</h3>
+                    <p class="fw-medium">{{ resultado_formatado }}</p>
+            </div>
+        </div>
+        <div class="container bg-dark-subtle rounded mt-4 mb-4" style="width: 50%">
+            <div class="row justify-content-center text-center mt-2 mb-2">
+                <div class="row mt-4 mb-2">
+                    <h4>Copie abaixo a cURL desta API:</h4>
+                </div>
+                <div class="row mb-2">
+                    <p class="fw-medium">Modo "Diferença":</p>
+                    <code id="curlCode1">
+                        curl -X POST -H "Content-Type: application/json" -d '{"data1": "01/09/2023", "data2": "10/09/2023", "modo": "diferenca"}' http://brut4luk3.pythonanywhere.com/api/compara_datas
+                    </code>
+                </div>
+                <div class="row justify-content-center mb-4">
+                    <button class="btn btn-secondary" onclick="copiarCurl('curlCode1')" style="width: 50%">Copiar cURL</button>
+                </div>
+
+                <div class="row mb-2">
+                    <p class="fw-medium">Modo "Comparação":</p>
+                    <code id="curlCode2">
+                        curl -X POST -H "Content-Type: application/json" -d '{"data1": "01/09/2023", "data2": "10/09/2023", "modo": "comparacao"}' http://brut4luk3.pythonanywhere.com/api/compara_datas
+                    </code>
+                </div>
+                <div class="row justify-content-center mb-4">
+                    <button class="btn btn-secondary" onclick="copiarCurl('curlCode2')" style="width: 50%">Copiar cURL</button>
+                </div>
+                <script>
+                    function copiarCurl(id) {
+                        var curlCode = document.getElementById(id);
+                        var textoCurl = curlCode.innerText;
+
+                        navigator.clipboard.writeText(textoCurl).then(function() {
+                            alert('cURL copiada com sucesso!');
+                        }, function() {
+                            alert('Erro ao copiar a cURL.');
+                        });
+                    }
+                </script>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<footer>
+    <div class="container-fluid bg-dark">
+        <div class="row text-white text-center">
+            <div class="col mt-3">
+                <p>Endereço: Rua Alwin Beckmann, 127, Blumenau, Brasil</p>
+                <p>Contato: lucasreinert96@gmail.com | Telefone: +55 (47) 99975-1383</p>
+                <p>&copy; 2023 Portfolio. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

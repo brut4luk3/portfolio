@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'api_compara_datas.apps.ApiComparaDatasConfig',
     'api_geolocation.apps.ApiGeolocationConfig',
     'api_informa_dia_util.apps.ApiInformaDiaUtilConfig',
+    'api_replace_text.apps.ApiReplaceTextConfig',
+    'api_cpf_cnpj.apps.ApiCpfCnpjConfig',
+    'api_telefone_latam.apps.ApiTelefoneLatamConfig',
 ]
 
 MIDDLEWARE = [

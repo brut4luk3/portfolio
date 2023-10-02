@@ -29,58 +29,23 @@
         </div>
         <div class="row justify-content-center">
             <div class="col mt-4 mb-2 align-self-center text-center">
-                <h2>API Compara Datas</h2>
+                <h2>API CPF ou CNPJ</h2>
             </div>
         </div>
         <div class="container bg-dark-subtle rounded mt-5 mb-4" style="width: 50%">
             <div class="row justify-content-center">
                 <form action="" method="POST" style="width: 50%">
                     {% csrf_token %}
-                    <div class="mt-4 mb-2">
-                        <label for="inputData1" class="form-label fw-medium">Data 1</label>
-                        <input
-                                type="date"
-                                name="data1"
-                                class="form-control rounded-3"
-                                id="inputData1"
-                                required
-                        >
-                    </div>
                     <div class="mb-3">
-                        <label for="inputData2" class="form-label fw-medium">Data 2</label>
+                        <label for="documento" class="form-label fw-medium">Documento</label>
                         <input
-                                type="date"
-                                name="data2"
+                                type="text"
+                                name="documento"
                                 class="form-control rounded-3"
-                                id="inputData2"
+                                id="documento"
+                                placeholder="Digite um CPF ou CNPJ"
                                 required
                         >
-                    </div>
-                    <div class="mb-4">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="modo" data-bs-toggle="dropdown" aria-expanded="false" name="modo">
-                                Selecione o modo
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#" data-value="comparacao">Comparação</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#" data-value="diferenca">Diferença</a>
-                                </li>
-                            </ul>
-                            <input type="hidden" name="modo" id="modo-hidden" value="comparacao">
-                            <script>
-                                document.querySelectorAll('.dropdown-item').forEach(item => {
-                                    item.addEventListener('click', (event) => {
-                                        event.preventDefault();
-                                        const selectedValue = event.target.getAttribute('data-value');
-                                        document.getElementById('modo-hidden').value = selectedValue;
-                                        document.getElementById('modo').innerText = event.target.innerText;
-                                    });
-                                });
-                            </script>
-                        </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="row md-6 mb-4 justify-content-center">
@@ -93,7 +58,7 @@
         <div class="container bg-dark-subtle rounded mt-5 mb-4" style="width: 50%">
             <div class="row justify-content-center text-center mt-2 mb-2">
                     <h3>Resultado:</h3>
-                    <p class="fw-medium">{{ resultado_formatado }}</p>
+                    <p class="fw-medium">{{ resultado_descricao }}</p>
             </div>
         </div>
         <div class="container bg-dark-subtle rounded mt-4 mb-4" style="width: 50%">
@@ -102,23 +67,13 @@
                     <h4>Copie abaixo a cURL desta API:</h4>
                 </div>
                 <div class="row mb-2">
-                    <p class="fw-medium">Modo "Diferença":</p>
+                    <p class="fw-medium">Modo "Completo":</p>
                     <code id="curlCode1">
-                        curl -X POST -H "Content-Type: application/json" -d '{"data1": "01/09/2023", "data2": "10/09/2023", "modo": "diferenca"}' http://brut4luk3.pythonanywhere.com/api/compara_datas
+                        curl -X POST -H "Content-Type: application/json" -d '{"documento": "050.665.059-62"}' https://api-valida-cpf-cnpj.onrender.com/api/valida_cpf_cnpj
                     </code>
                 </div>
                 <div class="row justify-content-center mb-4">
                     <button class="btn btn-secondary" onclick="copiarCurl('curlCode1')" style="width: 50%">Copiar cURL</button>
-                </div>
-
-                <div class="row mb-2">
-                    <p class="fw-medium">Modo "Comparação":</p>
-                    <code id="curlCode2">
-                        curl -X POST -H "Content-Type: application/json" -d '{"data1": "01/09/2023", "data2": "10/09/2023", "modo": "comparacao"}' http://brut4luk3.pythonanywhere.com/api/compara_datas
-                    </code>
-                </div>
-                <div class="row justify-content-center mb-4">
-                    <button class="btn btn-secondary" onclick="copiarCurl('curlCode2')" style="width: 50%">Copiar cURL</button>
                 </div>
                 <script>
                     function copiarCurl(id) {

@@ -128,7 +128,7 @@
                 <div class="row mb-2">
                     <p class="fw-medium">Modo "Completo":</p>
                     <code id="curlCode1">
-                        curl -X POST "https://api-replace-text.onrender.com/api/replace_text" \ -H "Content-Type: application/json" \ -d '{"texto": "Just some random text for tests.", "item_para_substituir": "o", "item_substituto": "a", "CasoParcialQuantidade": 0, "modo": "completo"}'
+                        curl -X POST -H "Content-Type: application/json" -d '{"texto": "Just some random text for tests.", "item_para_substituir": "o", "item_substituto": "a", "CasoParcialQuantidade": 0, "modo": "completo"}' https://api-replace-text.onrender.com/api/replace_text
                     </code>
                 </div>
                 <div class="row justify-content-center mb-4">
@@ -138,7 +138,7 @@
                 <div class="row mb-2">
                     <p class="fw-medium">Modo "Parcial":</p>
                     <code id="curlCode2">
-                        curl -X POST "https://api-replace-text.onrender.com/api/replace_text" \ -H "Content-Type: application/json" \ -d '{"texto": "Just some random text for tests.", "item_para_substituir": "o", "item_substituto": "a", "CasoParcialQuantidade": 2, "modo": "parcial"}'
+                        curl -X POST -H "Content-Type: application/json" -d '{"texto": "Just some random text for tests.", "item_para_substituir": "o", "item_substituto": "a", "CasoParcialQuantidade": 2, "modo": "parcial"}' https://api-replace-text.onrender.com/api/replace_text
                     </code>
                 </div>
                 <div class="row justify-content-center mb-4">

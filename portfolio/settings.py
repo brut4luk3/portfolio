@@ -147,3 +147,7 @@ LOGIN_REDIRECT_URL = '/users/'
 LOGOUT_REDIRECT_URL = '/users/login/'
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+EMAIL_HOST_USER = 'lucasreinert96@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'odzf tcau fcso jsol'

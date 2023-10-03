@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container" style="width: 60%; background-color: #D0EEEE; padding-bottom: 20px">
+  <div class="row justify-content-center">
+      <div class="col-md-5 mb-1 align-self-center text-center">
+          <h4>Message sent successfully!</h4>
+      </div>
+  </div>
+  <div class="row justify-content-center">
+      <div class="col-md-5 mb-2 align-self-center text-center">
+          <p>Click here to return to the index: <a href="{% url 'users:index_en' %}">Index</a></p>
+      </div>
+  </div>
+</div>
+{% endblock %}

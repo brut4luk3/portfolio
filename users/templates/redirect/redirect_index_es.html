@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container" style="width: 60%; background-color: #D0EEEE; padding-bottom: 20px">
+  <div class="row justify-content-center">
+      <div class="col-md-5 mb-1 align-self-center text-center">
+          <h4>Mensaje enviado correctamente!</h4>
+      </div>
+  </div>
+  <div class="row justify-content-center">
+      <div class="col-md-5 mb-2 align-self-center text-center">
+          <p>Haga clic aquí para volver al principio: <a href="{% url 'users:index_es' %}">Principio</a></p>
+      </div>
+  </div>
+</div>
+{% endblock %}

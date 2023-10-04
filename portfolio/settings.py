@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'brut4luk3',
-        'USER': 'root',
-        'PASSWORD': 'OffwzUheWH7rYHGTW5LBrg8jJv0tllpm',
-        'HOST': 'dpg-cke9un7s0fgc73b84qig-a',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Omega_200',
+        'HOST': 'localhost',
         'PORT': '5432'
         #'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }

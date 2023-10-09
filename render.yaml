@@ -6,8 +6,10 @@ databases:
 services:
   - type: web
     name: site_portfolio
-    runtime: python
-    buildCommand: "python manage.py migrate"
+    plan: free
+    env: python
+    region: oregon
+    buildCommand: "./build.sh"
     startCommand: "gunicorn portfolio.wsgi:application"
     envVars:
       - key: DATABASE_URL

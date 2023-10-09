@@ -2,24 +2,8 @@
 
 {% block content %}
 {% load static %}
-<div class="container" style="width: 85%; background-color: #D0EEEE; padding-bottom: 20px">
-    {% if not user.is_authenticated %}
-        <div class="row justify-content-center">
-            <div class="col-md-5 mb-1 align-self-center text-center">
-                <h4>Atenção!</h4>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5 mb-2 align-self-center text-center">
-                <h4>Você não está <strong>logado!</strong></h4>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5 mb-2 align-self-center text-center">
-                <p>Para realizar o login: <a href="{% url 'users:login' %}">Clique aqui!</a></p>
-            </div>
-        </div>
-    {% else %}
+<div class="container-fluid" style="background: linear-gradient(to bottom, #00ffff 0%, #660033 100%)">
+    <div class="container" style="width: 85%; padding-bottom: 20px">
         <div class="container-fluid sticky-top">
             <div class="row custom-right-align align-items-center">
                 <div class="col mt-2">
@@ -50,11 +34,10 @@
         </div>
         <div class="row justify-content-center">
             <div class="col mb-2 align-self-center text-center">
-                <h2>Seja bem-vindo</h2>
-                <h2>{{ user.first_name }}!</h2>
+                <h1>Seja bem-vindo!</h1>
             </div>
         </div>
-        <div class="container bg-dark-subtle rounded mb-4" style="width: 100%">
+        <div class="container rounded mb-4" style="width: 100%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
             <div class="row align-items-start">
                 <div class="col text-center mt-4 mb-4 md-4">
                     <img
@@ -66,14 +49,20 @@
                 </div>
                 <div class="col text-left mt-4 mb-4 md-4">
                     <h3>Este sou eu...</h3>
-                    <p class="fw-medium">Um pai cuidadoso, um marido amoroso e um profissional qualificado para superar qualquer desafio!</p>
-                    <p class="fw-medium">Minha especialidade é desenvolver websites 100% dinâmicos e funcionais, e para isso, utilizo o framework Django. Para aumentar ainda mais a usabilidade e alcance de minhas aplicações, desenvolvo endpoints utilizando FlaskAPI para interligar as mais variadas plataformas ao seu sistema.</p>
-                    <p class="fw-medium">Possuo conhecimento em fundamentos de UX, prezando sempre por designs minimalistas que garantem uma ferramenta intuitiva e acessível.</p>
-                    <p class="fw-medium">Ao me contratar, posso lhe garantir que você estará trabalhando com uma pessoa que lhe trará soluções, inovação e conhecimento.</p>
+                    <p class="fw-medium">Me chamo Lucas G. Reinert e sou o Dev Fullstack que você precisa.</p>
+                    <p class="fw-medium">Além disso, sou um pai cuidadoso, um marido amoroso e um profissional qualificado para superar qualquer desafio!</p>
+                    <h5 style="color: black">Minhas especialidades são:</h5>
+                    <ul>
+                        <li class="fw-medium">Web Development com Django Framework</li>
+                        <li class="fw-medium">Consumo/criação de APIs REST com Flask</li>
+                        <li class="fw-medium">Frontend com JavaScript e Bootstrap</li>
+                        <li class="fw-medium">Desenvolvimento Mobile com Kivy</li>
+                    </ul>
+                    <p class="fw-medium">Você verá que prezo pela praticidade e simplicidade de meus trabalhos, garantindo que todos os usuários tenham a melhor experiência.</p>
                 </div>
             </div>
         </div>
-        <div class="container bg-dark-subtle rounded mb-2" style="width: 100%">
+        <div class="container bg-dark-subtle rounded mb-2" style="width: 100%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
             <div class="row">
                 <div class="col mt-4 mb-4 md-4 mx-3">
                     <div class="row justify-content-center">
@@ -91,7 +80,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <a href="#"><img
+                                <a href="https://check-feriados.onrender.com" target="_blank" rel="noopener noreferrer"><img
                                         src="{% static 'feriados.png' %}"
                                         alt="API Feriados"
                                         class="img-fluid rounded"
@@ -219,7 +208,7 @@
                 </div>
             </div>
         </div>
-    {% endif %}
+    </div>
 </div>
 <footer>
     <div class="container-fluid bg-dark">

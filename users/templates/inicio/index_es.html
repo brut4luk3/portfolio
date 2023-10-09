@@ -2,24 +2,8 @@
 
 {% block content %}
 {% load static %}
-<div class="container" style="width: 85%; background-color: #D0EEEE; padding-bottom: 20px">
-    {% if not user.is_authenticated %}
-        <div class="row justify-content-center">
-            <div class="col-md-5 mb-1 align-self-center text-center">
-                <h5>Atenção!</h5>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5 mb-2 align-self-center text-center">
-                <h5>Você não está <strong>logado!</strong></h5>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-5 mb-2 align-self-center text-center">
-                <p>Para realizar o login: <a href="{% url 'login' %}">Clique aqui!</a></p>
-            </div>
-        </div>
-    {% else %}
+<div class="container-fluid" style="background: linear-gradient(to bottom, #00ffff 0%, #660033 100%)">
+    <div class="container" style="width: 85%; padding-bottom: 20px">
         <div class="container-fluid sticky-top">
             <div class="row custom-right-align align-items-center">
                 <div class="col mt-2">
@@ -50,11 +34,10 @@
         </div>
         <div class="row justify-content-center">
             <div class="col mb-2 align-self-center text-center">
-                <h2>Sea bienvenido</h2>
-                <h2>{{ user.first_name }}!</h2>
+                <h1>¡Sea bienvenido!</h1>
             </div>
         </div>
-        <div class="container bg-dark-subtle rounded mb-4" style="width: 100%">
+        <div class="container bg-dark-subtle rounded mb-4" style="width: 100%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
             <div class="row align-items-start">
                 <div class="col text-center mt-4 mb-4 md-4">
                     <img
@@ -65,19 +48,25 @@
                     >
                 </div>
                 <div class="col text-left mt-4 mb-4 md-4">
-                    <h3>Este sou eu...</h3>
-                    <p class="fw-medium">¡Un padre cuidadoso, un esposo amoroso y un profesional calificado para superar cualquier desafío!</p>
-                    <p class="fw-medium">Mi especialidad es desarrollar sitios web 100% dinámicos y funcionales, y para eso, uso el marco Django. Para aumentar aún más la usabilidad y el alcance de mis aplicaciones, creo puntos finales que usan FlaskAPI para interconectar las plataformas más variadas para su sistema.</p>
-                    <p class="fw-medium">Tengo conocimiento sobre los fundamentos de UX, siempre valorando los diseños minimalistas que garantizan una herramienta intuitiva y asequible.</p>
-                    <p class="fw-medium">Al contratarme, puedo asegurarle que trabajará con una persona que le traerá soluciones, innovación y conocimiento.</p>
+                    <h3>Éste soy yo...</h3>
+                    <p class="fw-medium">Mi nombre es Lucas G. Reinert y soy el desarrollador Fullstack que necesitas.</p>
+                    <p class="fw-medium">Además, soy un padre cariñoso, un esposo cariñoso y un profesional calificado para superar cualquier desafío.</p>
+                    <h5 style="color: black">Mis especialidades son:</h5>
+                    <ul>
+                        <li class="fw-medium">Desarrollo Web con Django Framework</li>
+                        <li class="fw-medium">Consumir/crear API REST con Flask</li>
+                        <li class="fw-medium">Frontend con JavaScript y Bootstrap</li>
+                        <li class="fw-medium">Desarrollo móvil con Kivy</li>
+                    </ul>
+                    <p class="fw-medium">Verás que valoro la practicidad y sencillez de mi trabajo, procurando que todos los usuarios tengan la mejor experiencia.</p>
                 </div>
             </div>
         </div>
-        <div class="container bg-dark-subtle rounded mb-2" style="width: 100%">
+        <div class="container bg-dark-subtle rounded mb-2" style="width: 100%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
             <div class="row">
                 <div class="col mt-4 mb-4 md-4 mx-3">
                     <div class="row justify-content-center">
-                        <h3>Veja abaixo alguns dos meus projetos:</h3>
+                        <h3>Vea algunos de mis proyectos a continuación:</h3>
                     </div>
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -219,7 +208,7 @@
                 </div>
             </div>
         </div>
-    {% endif %}
+    </div>
 </div>
 <footer>
     <div class="container-fluid bg-dark">

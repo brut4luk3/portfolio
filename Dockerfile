@@ -20,4 +20,4 @@ RUN python manage.py collectstatic --no-input
 RUN python manage.py migrate
 
 # O comando para rodar a aplicação
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "portfolio.wsgi.application"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "portfolio.wsgi:application"]

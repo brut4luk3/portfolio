@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-l95#4$p$1t2l7$q2_@9)(46+wfu*%9j74r2)n^lw$oeffvr#$r
 #DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['portfolio-lucas-g-reinert.up.railway.app']
 
 
 # Application definition

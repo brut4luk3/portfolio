@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Coleta os arquivos estáticos
-RUN python manage.py collectstatic --no-input
+RUN python manage.py collectstatic
 
 # Executa as migrações
 RUN python manage.py migrate

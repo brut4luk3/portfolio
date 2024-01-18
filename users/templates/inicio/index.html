@@ -2,8 +2,8 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid" style="background: linear-gradient(to bottom, #00ffff 0%, #660033 100%)">
-    <div class="container" style="width: 85%; padding-bottom: 20px">
+<div class="container-fluid main-background">
+    <div class="container main-container">
         <div class="container-fluid sticky-top">
             <div class="row custom-right-align align-items-center">
                 <div class="col mt-2">
@@ -14,17 +14,12 @@
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                             <li>
                                 <a class="dropdown-item" href="{% url 'users:index_en' %}">
-                                    <img src="{% static 'us.png' %}" alt="US Flag" style="max-width: 20px; margin-right: 5px">English
+                                    <img src="{% static 'us.png' %}" alt="US Flag" class="flag-icon">English
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{% url 'users:index' %}">
-                                    <img src="{% static 'brazil.png' %}" alt="BR Flag" style="max-width: 20px; margin-right: 5px">Português
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'users:index_es' %}">
-                                    <img src="{% static 'spain.png' %}" alt="ES Flag" style="max-width: 20px; margin-right: 5px">Español
+                                    <img src="{% static 'brazil.png' %}" alt="BR Flag" class="flag-icon">Português
                                 </a>
                             </li>
                         </ul>
@@ -37,20 +32,20 @@
                 <h1>Seja bem-vindo!</h1>
             </div>
         </div>
-        <div class="container rounded mb-4" style="width: 100%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
+        <div class="container rounded mb-4 secondary-background">
             <div class="row align-items-start">
                 <div class="col text-center mt-4 mb-4 md-4">
                     <img
-                            src="{% static 'lucas.jpeg' %}"
-                            alt="Lucas"
-                            class="rounded"
-                            width="95%"
+                            src="{% static 'lucas.png' %}"
+                            alt="Lucas G. Reinert"
+                            class="rounded profile-image"
+                            border="2px"
                     >
                 </div>
                 <div class="col text-left mt-4 mb-4 md-4">
                     <h3>Este sou eu...</h3>
                     <p class="fw-medium">Me chamo Lucas G. Reinert e sou o Dev Fullstack que você precisa.</p>
-                    <p class="fw-medium">Além disso, sou um pai cuidadoso, um marido amoroso e um profissional qualificado para superar qualquer desafio!</p>
+                    <p class="fw-medium">Meu maior foco é apresentar soluções e executá-las com maestria, garantindo o melhor resultado final!</p>
                     <h5 style="color: black">Minhas especialidades são:</h5>
                     <ul>
                         <li class="fw-medium">Web Development com Django Framework</li>
@@ -58,152 +53,323 @@
                         <li class="fw-medium">Frontend com JavaScript e Bootstrap</li>
                         <li class="fw-medium">Desenvolvimento Mobile com Flutter</li>
                     </ul>
-                    <p class="fw-medium">Você verá que prezo pela praticidade e simplicidade de meus trabalhos, garantindo que todos os usuários tenham a melhor experiência.</p>
                 </div>
             </div>
         </div>
-        <div class="container bg-dark-subtle rounded mb-2" style="width: 100%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
-            <div class="row">
-                <div class="col mt-4 mb-4 md-4 mx-3">
-                    <div class="row justify-content-center">
-                        <h3>Veja abaixo alguns dos meus projetos:</h3>
-                    </div>
-                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+
+        <!-- Mobile / Tablet -->
+        <div class="d-block d-md-none">
+            <div class="container rounded mb-4 bg-dark-subtle secondary-background">
+                <div class="row">
+                    <div class="col mt-4 mb-4 md-4 mx-3">
+                        <div class="row justify-content-center">
+                            <h3>Veja abaixo alguns dos meus projetos:</h3>
                         </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <a href="https://check-feriados.onrender.com" target="_blank" rel="noopener noreferrer"><img
-                                        src="{% static 'feriados.png' %}"
-                                        alt="API Feriados"
-                                        class="img-fluid rounded"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>Ambiente Feriados</h5>
-                                    <p class="fw-semibold">Cadastre, edite e delete feriados.</p>
-                                </div>
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
                             </div>
-                            <div class="carousel-item">
-                                <a href="{% url 'api_compara_datas:index_api_compara_datas' %}"><img
-                                        src="{% static 'datas.png' %}"
-                                        alt="API Compara Datas"
-                                        class="img-fluid rounded mx-auto d-block"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>API Compara Datas</h5>
-                                    <p class="fw-semibold">Realize o cálculo e comparação de datas.</p>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="https://check-feriados.onrender.com" target="_blank" rel="noopener noreferrer"><img
+                                            src="{% static 'feriados.png' %}"
+                                            alt="API Feriados"
+                                            class="img-fluid rounded carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>Ambiente Feriados</h5>
+                                        <p class="fw-semibold">Cadastre, edite e delete feriados.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="{% url 'api_geolocation:index_api_geolocation' %}"><img
-                                        src="{% static 'geolocation.png' %}"
-                                        alt="API Geolocation"
-                                        class="img-fluid rounded mx-auto d-block"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>API Geolocation</h5>
-                                    <p class="fw-semibold">Localização através da latitude e longitude.</p>
+                                <div class="carousel-item">
+                                    <a href="{% url 'api_compara_datas:index_api_compara_datas' %}"><img
+                                            src="{% static 'datas.png' %}"
+                                            alt="API Compara Datas"
+                                            class="img-fluid rounded mx-auto d-block carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>API Compara Datas</h5>
+                                        <p class="fw-semibold">Realize o cálculo e comparação de datas.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="{% url 'api_informa_dia_util:index_api_informa_dia_util' %}"><img
-                                        src="{% static 'dias.png' %}"
-                                        alt="API Informa Dia Útil"
-                                        class="img-fluid rounded mx-auto d-block"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>API Informa Dia Útil</h5>
-                                    <p class="fw-semibold">Hoje é feriado, final de semana ou dia útil?</p>
+                                <div class="carousel-item">
+                                    <a href="{% url 'api_geolocation:index_api_geolocation' %}"><img
+                                            src="{% static 'geolocation.png' %}"
+                                            alt="API Geolocation"
+                                            class="img-fluid rounded mx-auto d-block carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>API Geolocation</h5>
+                                        <p class="fw-semibold">Localização através da latitude e longitude.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="{% url 'api_replace_text:index_api_replace_text' %}"><img
-                                        src="{% static 'replace.png' %}"
-                                        alt="API Replace Text"
-                                        class="img-fluid rounded mx-auto d-block"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>API Replace Text</h5>
-                                    <p class="fw-semibold">Substitua strings de forma rápida e assertiva.</p>
+                                <div class="carousel-item">
+                                    <a href="{% url 'api_informa_dia_util:index_api_informa_dia_util' %}"><img
+                                            src="{% static 'dias.png' %}"
+                                            alt="API Informa Dia Útil"
+                                            class="img-fluid rounded mx-auto d-block carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>API Informa Dia Útil</h5>
+                                        <p class="fw-semibold">Hoje é feriado, final de semana ou dia útil?</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="{% url 'api_cpf_cnpj:index_api_cpf_cnpj' %}"><img
-                                        src="{% static 'documento.png' %}"
-                                        alt="API CPF ou CNPJ"
-                                        class="img-fluid rounded mx-auto d-block"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>API CPF ou CNPJ</h5>
-                                    <p class="fw-semibold">Valida CPF ou CNPJ com critérios pré-definidos.</p>
+                                <div class="carousel-item">
+                                    <a href="{% url 'api_replace_text:index_api_replace_text' %}"><img
+                                            src="{% static 'replace.png' %}"
+                                            alt="API Replace Text"
+                                            class="img-fluid rounded mx-auto d-block carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>API Replace Text</h5>
+                                        <p class="fw-semibold">Substitua strings de forma rápida e assertiva.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="{% url 'api_telefone_latam:index_api_telefone_latam' %}"><img
-                                        src="{% static 'telefone.png' %}"
-                                        alt="API Telefone LATAM"
-                                        class="img-fluid rounded mx-auto d-block"
-                                ></a>
-                                <div class="carousel-caption d-none d-md-block text-white">
-                                    <h5>API Telefone LATAM</h5>
-                                    <p class="fw-semibold">Valide um telefone e seu local na América Latina.</p>
+                                <div class="carousel-item">
+                                    <a href="{% url 'api_cpf_cnpj:index_api_cpf_cnpj' %}"><img
+                                            src="{% static 'documento.png' %}"
+                                            alt="API CPF ou CNPJ"
+                                            class="img-fluid rounded mx-auto d-block carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>API CPF ou CNPJ</h5>
+                                        <p class="fw-semibold">Valida CPF ou CNPJ com critérios pré-definidos.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="{% url 'api_telefone_latam:index_api_telefone_latam' %}"><img
+                                            src="{% static 'telefone.png' %}"
+                                            alt="API Telefone LATAM"
+                                            class="img-fluid rounded mx-auto d-block carousel-image"
+                                    ></a>
+                                    <div class="carousel-caption d-none d-md-block text-white">
+                                        <h5>API Telefone LATAM</h5>
+                                        <p class="fw-semibold">Valide um telefone e seu local na América Latina.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col mt-4 mb-4 md-4">
-                    <div class="row justify-content-center text-center mb-4">
-                        <h3>Se interessou pelo meu trabalho?</h3>
-                        <p class="fw-medium">Preencha estes dados e vamos conversar:</p>
+            </div>
+            <div class="container rounded mb-2 bg-dark-subtle secondary-background">
+                <div class="row">
+                    <div class="col mt-4 mb-4 md-4">
+                        <div class="row justify-content-center">
+                            <div class="row justify-content-center text-center mb-2">
+                                <h3>Se interessou pelo meu trabalho?</h3>
+                                <p class="fw-medium">Preencha estes dados e vamos conversar:</p>
+                            </div>
+                            <form action="" method="POST" class="form">
+                                {% csrf_token %}
+                                <div class="mb-2">
+                                    <label for="inputName" class="form-label fw-medium">Nome Completo</label>
+                                    <input
+                                            type="text"
+                                            name="name"
+                                            class="form-control rounded-3"
+                                            id="inputName"
+                                            placeholder="Informe seu nome completo"
+                                            required
+                                    >
+                                </div>
+                                <div class="mb-2">
+                                    <label for="inputEmail" class="form-label fw-medium">E-mail</label>
+                                    <input
+                                            type="email"
+                                            name="email"
+                                            class="form-control rounded-3"
+                                            id="inputEmail"
+                                            placeholder="Informe seu e-mail"
+                                            required
+                                    >
+                                </div>
+                                <div class="mb-4">
+                                    <label for="inputTelefone" class="form-label fw-medium">Telefone</label>
+                                    <input
+                                            type="tel"
+                                            name="telefone"
+                                            class="form-control rounded-3"
+                                            id="inputTelefone"
+                                            placeholder="Informe seu telefone com DDD"
+                                            required
+                                    >
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="row md-6 mb-4 justify-content-center">
+                                        <button type="submit" class="btn btn-secondary" style="width: 100%">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <form action="" method="POST" style="width: 70%">
-                            {% csrf_token %}
-                            <div class="mb-2">
-                                <label for="inputName" class="form-label fw-medium">Nome Completo</label>
-                                <input
-                                        type="text"
-                                        name="name"
-                                        class="form-control rounded-3"
-                                        id="inputName"
-                                        placeholder="Informe seu nome completo"
-                                >
-                            </div>
-                            <div class="mb-2">
-                                <label for="inputEmail" class="form-label fw-medium">E-mail</label>
-                                <input
-                                        type="email"
-                                        name="email"
-                                        class="form-control rounded-3"
-                                        id="inputEmail"
-                                        placeholder="Informe seu e-mail"
-                                >
-                            </div>
-                            <div class="mb-4">
-                                <label for="inputTelefone" class="form-label fw-medium">Telefone</label>
-                                <input
-                                        type="tel"
-                                        name="telefone"
-                                        class="form-control rounded-3"
-                                        id="inputTelefone"
-                                        placeholder="Informe seu telefone com DDD"
-                                        required
-                                >
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="row md-6 mb-4 justify-content-center">
-                                    <button type="submit" class="btn btn-secondary" style="width: 100%">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop -->
+        <div class="d-none d-md-block">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="container rounded mb-2">
+                        <div class="row">
+                            <div class="col mt-4 mb-4 md-4 mx-3">
+                                <div class="row justify-content-center">
+                                    <h3>Veja abaixo alguns dos meus projetos:</h3>
+                                </div>
+                                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <a href="https://check-feriados.onrender.com" target="_blank" rel="noopener noreferrer"><img
+                                                    src="{% static 'feriados.png' %}"
+                                                    alt="API Feriados"
+                                                    class="img-fluid rounded carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>Ambiente Feriados</h5>
+                                                <p class="fw-semibold">Cadastre, edite e delete feriados.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="{% url 'api_compara_datas:index_api_compara_datas' %}"><img
+                                                    src="{% static 'datas.png' %}"
+                                                    alt="API Compara Datas"
+                                                    class="img-fluid rounded mx-auto d-block carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>API Compara Datas</h5>
+                                                <p class="fw-semibold">Realize o cálculo e comparação de datas.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="{% url 'api_geolocation:index_api_geolocation' %}"><img
+                                                    src="{% static 'geolocation.png' %}"
+                                                    alt="API Geolocation"
+                                                    class="img-fluid rounded mx-auto d-block carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>API Geolocation</h5>
+                                                <p class="fw-semibold">Localização através da latitude e longitude.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="{% url 'api_informa_dia_util:index_api_informa_dia_util' %}"><img
+                                                    src="{% static 'dias.png' %}"
+                                                    alt="API Informa Dia Útil"
+                                                    class="img-fluid rounded mx-auto d-block carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>API Informa Dia Útil</h5>
+                                                <p class="fw-semibold">Hoje é feriado, final de semana ou dia útil?</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="{% url 'api_replace_text:index_api_replace_text' %}"><img
+                                                    src="{% static 'replace.png' %}"
+                                                    alt="API Replace Text"
+                                                    class="img-fluid rounded mx-auto d-block carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>API Replace Text</h5>
+                                                <p class="fw-semibold">Substitua strings de forma rápida e assertiva.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="{% url 'api_cpf_cnpj:index_api_cpf_cnpj' %}"><img
+                                                    src="{% static 'documento.png' %}"
+                                                    alt="API CPF ou CNPJ"
+                                                    class="img-fluid rounded mx-auto d-block carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>API CPF ou CNPJ</h5>
+                                                <p class="fw-semibold">Valida CPF ou CNPJ com critérios pré-definidos.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="{% url 'api_telefone_latam:index_api_telefone_latam' %}"><img
+                                                    src="{% static 'telefone.png' %}"
+                                                    alt="API Telefone LATAM"
+                                                    class="img-fluid rounded mx-auto d-block carousel-image"
+                                            ></a>
+                                            <div class="carousel-caption d-none d-md-block text-white">
+                                                <h5>API Telefone LATAM</h5>
+                                                <p class="fw-semibold">Valide um telefone e seu local na América Latina.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="container rounded mb-2">
+                        <div class="row">
+                            <div class="col mt-4 mb-4 md-4">
+                                <div class="row justify-content-center">
+                                    <div class="row justify-content-center text-center mb-2">
+                                        <h3>Se interessou pelo meu trabalho?</h3>
+                                        <p class="fw-medium">Preencha estes dados e vamos conversar:</p>
+                                    </div>
+                                    <form action="" method="POST" class="form">
+                                        {% csrf_token %}
+                                        <div class="mb-2">
+                                            <label for="inputName" class="form-label fw-medium">Nome Completo</label>
+                                            <input
+                                                    type="text"
+                                                    name="name"
+                                                    class="form-control rounded-3"
+                                                    id="inputName"
+                                                    placeholder="Informe seu nome completo"
+                                                    required
+                                            >
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="inputEmail" class="form-label fw-medium">E-mail</label>
+                                            <input
+                                                    type="email"
+                                                    name="email"
+                                                    class="form-control rounded-3"
+                                                    id="inputEmail"
+                                                    placeholder="Informe seu e-mail"
+                                                    required
+                                            >
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="inputTelefone" class="form-label fw-medium">Telefone</label>
+                                            <input
+                                                    type="tel"
+                                                    name="telefone"
+                                                    class="form-control rounded-3"
+                                                    id="inputTelefone"
+                                                    placeholder="Informe seu telefone com DDD"
+                                                    required
+                                            >
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="row md-6 mb-4 justify-content-center">
+                                                <button type="submit" class="btn btn-secondary" style="width: 100%">Enviar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

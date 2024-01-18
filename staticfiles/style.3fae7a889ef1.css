@@ -1,0 +1,191 @@
+h5 {
+  color: white;
+}
+
+h4 {
+  color: black;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1px;
+}
+
+.container {
+  width: 55%;
+}
+
+.main-container {
+  width: 85%;
+  padding-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #E42121;
+}
+
+a:hover {
+  color: #E44D21;
+}
+
+.custom-right-align {
+    text-align: right;
+}
+
+.main-background {
+    background: linear-gradient(to bottom, #97E4FF 0%, #1EC5FF 100%);
+}
+
+.secondary-background {
+    background: linear-gradient(to bottom, #A4E7FF 0%, #5194AC 100%);
+}
+
+.flag-icon {
+    max-width: 20px;
+    margin-right: 5px;
+}
+
+.profile-image {
+    width: 75%;
+}
+
+.carousel-item {
+    padding-right: 20px;
+}
+
+.carousel-image {
+    width: 100%;
+}
+
+.carousel-indicators {
+    text-align: center;
+}
+
+.carousel-caption {
+    display: block !important;
+}
+
+.form {
+    width: 70%
+}
+
+.form-control {
+    width: 100%; /* Valor padrão */
+    margin: auto; /* Centraliza o formulário */
+}
+
+.carousel {
+    z-index: 2; /* Garante que o carrossel esteja acessível */
+}
+
+.dropdown-toggle {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.secondary-container {
+    background: linear-gradient(to bottom, #A4E7FF 0%, #5194AC 100%);
+    margin: auto; /* Centraliza o container */
+}
+
+/* Responsividade */
+@media only screen and (max-width: 1024px) {
+    .secondary-container {
+        width: 90%; /* Ajuste para telas menores */
+    }
+}
+
+/* Responsividade para o botão de idiomas e lista ul */
+@media only screen and (max-width: 1024px) {
+    .dropdown-toggle {
+        font-size: 11px; /* Diminuir tamanho da fonte para mobile e tablet */
+        padding: 2px 7px; /* Ajustar o padding se necessário */
+    }
+
+    .dropdown-menu {
+        font-size: 11px; /* Diminuir tamanho da fonte dos itens da lista */
+    }
+}
+
+/* Responsividade do formulário */
+@media only screen and (max-width: 600px) {
+    .form {
+        width: 100%
+    }
+    .form-control {
+        width: 100%; /* Ajuste para telas pequenas */
+    }
+}
+
+/* Responsividade das imagens */
+@media only screen and (max-width: 600px) {
+    .profile-image, .carousel-image {
+        width: 100%; /* Ajuste para telas pequenas */
+    }
+}
+
+/* Responsividade dos textos */
+@media only screen and (max-width: 600px) {
+    .container, .main-container, .secondary-background {
+        width: 100%;
+    }
+    .fw-medium {
+        font-size: 10px; /* Tamanho da fonte para mobile */
+    }
+    .fw-semibold {
+        font-size: 10px; /* Tamanho da fonte para mobile */
+    }
+    h3 {
+        font-size: 18px; /* Tamanho da fonte para mobile */
+    }
+    h5 {
+        font-size: 18px; /* Tamanho da fonte para mobile */
+    }
+    /* Outros ajustes específicos para mobile */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .container, .main-container {
+        width: 80%;
+    }
+    .secondary-background {
+        width: 90%;
+    }
+    .fw-medium {
+        font-size: 14px; /* Tamanho da fonte para tablet */
+    }
+    .fw-semibold {
+        font-size: 14px; /* Tamanho da fonte para tablet */
+    }
+    h3 {
+        font-size: 18px; /* Tamanho da fonte para tablet */
+    }
+    h5 {
+        font-size: 18px; /* Tamanho da fonte para tablet */
+    }
+    /* Outros ajustes específicos para tablet */
+}
+
+@media only screen and (min-width: 1025px) {
+    .container, .main-container, .secondary-background {
+        width: 100%;
+    }
+    .secondary-container {
+        width: 50%; /* Tamanho padrão para desktop */
+    }
+    .fw-medium {
+        font-size: 18px; /* Tamanho da fonte para desktop */
+    }
+    .fw-semibold {
+        font-size: 18px; /* Tamanho da fonte para desktop */
+    }
+    h3 {
+        font-size: 22px; /* Tamanho da fonte para desktop */
+    }
+    h5 {
+        font-size: 22px; /* Tamanho da fonte para desktop */
+    }
+    /* Outros ajustes específicos para desktop */
+}

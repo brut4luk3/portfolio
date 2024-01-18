@@ -2,8 +2,8 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid" style="background: linear-gradient(to bottom, #00ffff 0%, #660033 100%)">
-    <div class="container" style="width: 85%; padding-bottom: 20px">
+<div class="container-fluid main-background">
+    <div class="container main-container">
         <div class="container-fluid sticky-top">
             <div class="row custom-right-align align-items-center">
                 <div class="col mt-2">
@@ -16,9 +16,9 @@
                 <h2>API Informa Dia Útil</h2>
             </div>
         </div>
-        <div class="container rounded mt-5 mb-4" style="width: 50%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
+        <div class="container rounded secondary-container mt-5 mb-4">
             <div class="row justify-content-center">
-                <form action="" method="POST" style="width: 50%">
+                <form action="" method="POST" class="form">
                     {% csrf_token %}
                     <div class="mt-4 mb-2">
                         <label for="data_atual" class="form-label fw-medium">Data Atual</label>
@@ -32,10 +32,10 @@
                     </div>
                     <div class="mb-4">
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="estado" data-bs-toggle="dropdown" aria-expanded="false" name="estado">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="estado" data-bs-toggle="dropdown" aria-expanded="false">
                                 Selecione o Estado
                             </button>
-                            <ul class="dropdown-menu overflow-auto" style="max-height: 200px;" aria-labelledby="languageDropdown">
+                            <ul class="dropdown-menu overflow-auto" style="max-height: 200px;" aria-labelledby="estado">
                                 {% for i in lista_estado %}
                                     <li>
                                         <a class="dropdown-item" href="#" data-value="{{ i }}">{{ i }}</a>
@@ -43,16 +43,6 @@
                                 {% endfor %}
                             </ul>
                             <input type="hidden" name="estado" id="estado-hidden" value="all">
-                            <script>
-                                document.querySelectorAll('.dropdown-item').forEach(item => {
-                                    item.addEventListener('click', (event) => {
-                                        event.preventDefault();
-                                        const selectedValue = event.target.getAttribute('data-value');
-                                        document.getElementById('estado-hidden').value = selectedValue;
-                                        document.getElementById('estado').innerText = event.target.innerText;
-                                    });
-                                });
-                            </script>
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -63,13 +53,13 @@
                 </form>
             </div>
         </div>
-        <div class="container rounded mt-5 mb-4" style="width: 50%; background: linear-gradient(to bottom, #6699ff 0%, #ccccff 100%)">
+        <div class="container rounded secondary-container mt-5 mb-4">
             <div class="row justify-content-center text-center mt-2 mb-2">
-                    <h3>Resultado:</h3>
-                    <p class="fw-medium">{{ resultado }}</p>
+                <h3>Resultado:</h3>
+                <p class="fw-medium">{{ resultado }}</p>
             </div>
         </div>
-        <div class="container bg-dark-subtle rounded mt-4 mb-4" style="width: 50%">
+        <div class="container rounded secondary-container mt-4 mb-4">
             <div class="row justify-content-center text-center mt-2 mb-2">
                 <div class="row mt-4 mb-2">
                     <h4>Copie abaixo a cURL desta API:</h4>
@@ -82,19 +72,6 @@
                 <div class="row justify-content-center mb-4">
                     <button class="btn btn-secondary" onclick="copiarCurl('curlCode1')" style="width: 50%">Copiar cURL</button>
                 </div>
-
-                <script>
-                    function copiarCurl(id) {
-                        var curlCode = document.getElementById(id);
-                        var textoCurl = curlCode.innerText;
-
-                        navigator.clipboard.writeText(textoCurl).then(function() {
-                            alert('cURL copiada com sucesso!');
-                        }, function() {
-                            alert('Erro ao copiar a cURL.');
-                        });
-                    }
-                </script>
             </div>
         </div>
     </div>
@@ -110,4 +87,5 @@
         </div>
     </div>
 </footer>
+<script src="{% static 'script.js' %}"></script>
 {% endblock %}
